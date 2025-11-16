@@ -1,0 +1,128 @@
+/* Pengaturan dasar halaman */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Warna langit biru muda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; 
+    position: relative;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    text-align: center;
+    max-width: 450px;
+    z-index: 10;
+    position: relative;
+    
+    animation: fadeInCard 1.5s ease-out forwards;
+    opacity: 0; 
+    transform: translateY(20px); 
+}
+
+@keyframes fadeInCard {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #ff69b4; 
+    font-size: 2.8em;
+    margin-bottom: 15px;
+}
+
+.photo-container {
+    margin: 20px 0; 
+    overflow: hidden; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    display: inline-block; 
+}
+
+.birthday-photo {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    border-radius: 10px;
+    object-fit: cover; 
+    max-height: 250px; 
+}
+
+.message {
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.from {
+    margin-top: 25px;
+    font-style: italic;
+    color: #777;
+}
+
+.balloon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.balloon {
+    position: absolute;
+    width: 70px;
+    height: 90px;
+    background-color: rgba(255, 105, 180, 0.7); 
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    bottom: -100px; 
+    
+    box-shadow: 0 15px 10px -10px rgba(0,0,0,0.1); 
+    
+    animation: floatUp 10s infinite linear;
+}
+
+
+.balloon:nth-child(2) {
+    background-color: rgba(135, 206, 235, 0.7); 
+    left: 20%;
+    animation-duration: 12s; 
+    animation-delay: 2s; 
+}
+
+.balloon:nth-child(3) {
+    background-color: rgba(255, 215, 0, 0.7); 
+    left: 60%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.balloon:nth-child(4) {
+    background-color: rgba(144, 238, 144, 0.7); 
+    left: 80%;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+
+@keyframes floatUp {
+    0% {
+        bottom: -100px;
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(40px); 
+    }
+    100% {
+        bottom: 110vh; 
+        transform: translateX(-40px); 
+    }
+}
